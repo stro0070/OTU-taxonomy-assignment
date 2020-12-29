@@ -11,7 +11,7 @@ head(taxonomy)
 
 
 ##Replace all other taxonomy assignment methods with SynMock taxonomy assignment if Synthetic Mock Community sequences were assigned in AMPTK.  (I added these sequences to the database "on the fly.")
-taxonomy[258,'AMPTK'] #View an example of a Synmock assignment
+#taxonomy[258,'AMPTK'] #View an example of a Synmock assignment
 
 for(i in 1:nrow(taxonomy)){
   if(grepl('|SYN', taxonomy$AMPTK[i], fixed = TRUE)){
@@ -24,7 +24,7 @@ for(i in 1:nrow(taxonomy)){
   }
 
 }
-taxonomy[258,] #View an example of a Synmock assignment
+#taxonomy[258,] #View an example of a Synmock assignment
 
 
 ##Reformat table
@@ -384,8 +384,8 @@ for(j in 2:number.of.methods){
 }
 
 tail(longest.taxonomy)
-longest.taxonomy[59]
-longest.taxonomy[61]
+#longest.taxonomy[59]
+#longest.taxonomy[61]
 tail(taxonomy)
 
 
@@ -508,8 +508,8 @@ for(i in 1:length(taxonomy$longest.taxonomy)){
   }
 }
 
-taxonomy$longest.taxonomy[8659]
-taxonomy$qiime.formatted.longest.taxonomy[8659]
+#taxonomy$longest.taxonomy[8659]
+#taxonomy$qiime.formatted.longest.taxonomy[8659]
 
 #Fix jumps from class ("mycetes") to genus (";g__")
 for(i in 1:length(taxonomy$longest.taxonomy)){
@@ -524,8 +524,8 @@ for(i in 1:length(taxonomy$longest.taxonomy)){
   }
 }
 
-taxonomy$longest.taxonomy[11342]
-taxonomy$qiime.formatted.longest.taxonomy[11342]
+#taxonomy$longest.taxonomy[11342]
+#taxonomy$qiime.formatted.longest.taxonomy[11342]
 
 #Fix jumps from family to genus
 for(i in 1:length(taxonomy$longest.taxonomy)){
@@ -540,8 +540,8 @@ for(i in 1:length(taxonomy$longest.taxonomy)){
   }
 }
 
-taxonomy$longest.taxonomy[18]
-taxonomy$qiime.formatted.longest.taxonomy[18]
+#taxonomy$longest.taxonomy[18]
+#taxonomy$qiime.formatted.longest.taxonomy[18]
 
 
 #Optional:  write the taxonomy file, here.  Or, proceed to modify the taxonomy so it will work in Qiime2
@@ -554,7 +554,7 @@ taxonomy$qiime.formatted.longest.taxonomy[18]
 
 
 #view deficient taxon.
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 #add phylum
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
@@ -567,7 +567,7 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 #add class
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
@@ -580,7 +580,7 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 #add order
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
@@ -593,7 +593,7 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 #add family
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
@@ -606,7 +606,7 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 
 #add genus
@@ -620,16 +620,16 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 
 #add species.  Note:  This one is unique!  It adds "sp" to the lowest level of taxonomy.
 
 
-taxonomy$qiime.formatted.longest.taxonomy[980]
-taxonomy$qiime.formatted.longest.taxonomy[992]
-taxonomy$qiime.formatted.longest.taxonomy[11]
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[980]
+#taxonomy$qiime.formatted.longest.taxonomy[992]
+#taxonomy$qiime.formatted.longest.taxonomy[11]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
 #If genus is present and species is absent, use this.
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
@@ -641,12 +641,12 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work.
-taxonomy$qiime.formatted.longest.taxonomy[980]
-taxonomy$qiime.formatted.longest.taxonomy[992]
-taxonomy$qiime.formatted.longest.taxonomy[11]
-taxonomy$qiime.formatted.longest.taxonomy[20]
+#taxonomy$qiime.formatted.longest.taxonomy[980]
+#taxonomy$qiime.formatted.longest.taxonomy[992]
+#taxonomy$qiime.formatted.longest.taxonomy[11]
+#taxonomy$qiime.formatted.longest.taxonomy[20]
 
-taxonomy$qiime.formatted.longest.taxonomy[963]
+#taxonomy$qiime.formatted.longest.taxonomy[963]
 
 #If family is present, use this.
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
@@ -658,14 +658,14 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
 }
 
 #check work.
-taxonomy$qiime.formatted.longest.taxonomy[963]
-taxonomy$qiime.formatted.longest.taxonomy[992]
+#taxonomy$qiime.formatted.longest.taxonomy[963]
+#taxonomy$qiime.formatted.longest.taxonomy[992]
 
 
 
 #If order is present, use this.
 
-taxonomy$qiime.formatted.longest.taxonomy[994]
+#taxonomy$qiime.formatted.longest.taxonomy[994]
 
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   if(strsplit(taxonomy$qiime.formatted.longest.taxonomy[i], split = ";")[[1]][4] != "o__unidentified" & length(strsplit(taxonomy$qiime.formatted.longest.taxonomy[i], split = ";")[[1]]) == 6){
@@ -675,12 +675,12 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   }
 }
 
-taxonomy$qiime.formatted.longest.taxonomy[994]
-taxonomy$qiime.formatted.longest.taxonomy[992]
+#taxonomy$qiime.formatted.longest.taxonomy[994]
+#taxonomy$qiime.formatted.longest.taxonomy[992]
 
 #If class is present, use this.
 
-taxonomy$qiime.formatted.longest.taxonomy[995] #view a deficient taxon
+#taxonomy$qiime.formatted.longest.taxonomy[995] #view a deficient taxon
 
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   if(strsplit(taxonomy$qiime.formatted.longest.taxonomy[i], split = ";")[[1]][3] != "c__unidentified" & length(strsplit(taxonomy$qiime.formatted.longest.taxonomy[i], split = ";")[[1]]) == 6){
@@ -690,7 +690,7 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   }
 }
 
-taxonomy$qiime.formatted.longest.taxonomy[995]
+#taxonomy$qiime.formatted.longest.taxonomy[995]
 
 
 #If phylum is present, use this.
@@ -705,11 +705,11 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   }
 }
 
-taxonomy$qiime.formatted.longest.taxonomy[993]
+#taxonomy$qiime.formatted.longest.taxonomy[993]
 
 #If kingdom is present.
 
-taxonomy$qiime.formatted.longest.taxonomy[1000]
+#taxonomy$qiime.formatted.longest.taxonomy[1000]
 
 for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   if(strsplit(taxonomy$qiime.formatted.longest.taxonomy[i], split = ";")[[1]][1] != "k__unidentified" & length(strsplit(taxonomy$qiime.formatted.longest.taxonomy[i], split = ";")[[1]]) == 6){
@@ -719,7 +719,7 @@ for(i in 1: length(taxonomy$qiime.formatted.longest.taxonomy)){
   }
 }
 
-taxonomy$qiime.formatted.longest.taxonomy[1000]
+#taxonomy$qiime.formatted.longest.taxonomy[1000]
 
 #Check entire taxonomy column for all taxonomy levels.  (All should add to zero.)
 sum(grepl("k__", taxonomy$qiime.formatted.longest.taxonomy) != 'TRUE')
